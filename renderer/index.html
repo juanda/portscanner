@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Photon</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/photon.min.css">
+
+  <!-- Javascript -->
+</head>
+
+<body>
+  <div class="window">
+
+    <!-- .toolbar-header sits at the top of your app -->
+    <header class="toolbar toolbar-header">
+      <h1 class="title">Escaneador de puertos ACME</h1>
+    </header>
+
+    <!-- Your app's content goes inside .window-content -->
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane pane-sm sidebar">
+
+          <div style="text-align: center">
+            <form>
+              <div class="form-group">
+                <label>IP o Red</label>
+                <input id="ip" type="text" class="form-control" placeholder="Ej: 10.10.10.1 o 10.20.30.0/24">
+              </div>              
+
+              <div class="form-group">
+                <label>Puerto inicio</label>
+                <input id="port_inicio" type="text" class="form-control" placeholder="Puerto inicio">
+              </div>
+
+              <div class="form-group">
+                <label>Puerto fin</label>
+                <input id="port_fin" type="text" class="form-control" placeholder="Puerto fin">
+              </div>
+
+            </form>
+
+            <button id="btn_start" class="btn btn-form btn-primary">Vamooo!</button>
+            <button id="btn_stop" class="btn btn-form btn-negative">Stop</button>
+            <button id="btn_clear" class="btn btn-form btn-negative">Borrar</button>
+            <div id="loading">
+              <p>Escaneando puertos</p>
+              <img id="loading" src="./loading.gif"></img>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pane">
+          <table class="table-striped">
+            <thead>
+              <tr>
+                <th>IP</th>
+                <th>Puerto</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="table_body">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/portscanner.js" charset="utf-8"></script>
+</body>
+
+</html>

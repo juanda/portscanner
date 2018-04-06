@@ -1,0 +1,44 @@
+{
+  "name": "portscanner",
+  "productName": "Portscanner",
+  "version": "0.0.0",
+  "description": "My transcendent app",
+  "license": "MIT",
+  "repository": "juanda/portscanner",
+  "author": {
+    "name": "Juan David",
+    "email": "juandalibaba@gmail.com",
+    "url": "juandarodriguez.es"
+  },
+  "scripts": {
+    "test": "xo",
+    "start": "electron .",
+    "build": "electron-packager . --out=dist --asar --overwrite --all"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css"
+  ],
+  "keywords": [
+    "electron-app",
+    "electron"
+  ],
+  "dependencies": {
+    "electron-debug": "^1.0.0",
+    "evilscan": "^1.6.1"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron-packager": "^8.0.0",
+    "electron": "^1.8.4",
+    "xo": "^0.16.0"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
