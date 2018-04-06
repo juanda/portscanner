@@ -1,6 +1,7 @@
 var evilscan = require("evilscan");
 
 const btn_start = document.getElementById("btn_start");
+const btn_stop = document.getElementById("btn_stop");
 const loading = document.getElementById("loading");
 
 function show_loading(){
@@ -25,6 +26,8 @@ function enable_btn_start(){
 
 hide_loading();
 
+var scanner;
+
 btn_start.onclick = () => {
 
   var options = {
@@ -34,7 +37,7 @@ btn_start.onclick = () => {
     banner: true
   };
 
-  var scanner = new evilscan(options);
+  scanner = new evilscan(options);
   
   disable_btn_start();
   show_loading();
@@ -60,4 +63,9 @@ btn_start.onclick = () => {
 	});
 
 	scanner.run();
+};
+
+btn_stop.onclick = () => {
+
+  scanner.abort()
 };
