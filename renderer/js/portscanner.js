@@ -2,6 +2,7 @@ var evilscan = require("evilscan");
 
 const btn_start = document.getElementById("btn_start");
 const btn_stop = document.getElementById("btn_stop");
+const btn_clear = document.getElementById("btn_clear");
 const loading = document.getElementById("loading");
 
 function show_loading(){
@@ -22,13 +23,13 @@ function enable_btn_start(){
   btn_start.classList.add('btn-primary');
 }
 
-
-
 hide_loading();
 
 var scanner;
 
 btn_start.onclick = () => {
+
+  btn_clear.onclick();
 
   var options = {
     target: ip.value,
@@ -66,6 +67,10 @@ btn_start.onclick = () => {
 };
 
 btn_stop.onclick = () => {
-
   scanner.abort()
+};
+
+btn_clear.onclick = () => {
+  let t = document.getElementById("table_body");
+   t.innerHTML = "";
 };

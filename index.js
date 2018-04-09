@@ -1,5 +1,5 @@
 "use strict";
-const {app, BrowserWindow} = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 // adds debug features like hotkeys for triggering dev tools and reload
 require("electron-debug")();
 
@@ -25,6 +25,16 @@ function createMainWindow() {
 
 	win.loadURL(`file://${__dirname}/renderer/index.html`);
 	win.on("closed", onClosed);
+
+	Menu.setApplicationMenu(Menu.buildFromTemplate([
+		{
+			 label: app.getName(),
+			 submenu: [
+				{role: 'minimize'},
+				{role: 'close'}
+			  ]
+	}
+	]));
 
 	return win;
 }
